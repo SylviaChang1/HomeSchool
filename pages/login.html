@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset=utf-8>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <title>教师端登录</title>
+
+    <link href="../styles/framework.css" rel="stylesheet" >
+    <link href="../styles/style.css" rel="stylesheet" >
+
+</head>
+<body>
+
+<div id="preloader">
+    <div id="status">
+        <p class="center-text">
+            Loading the login page...
+        </p>
+    </div>
+</div>
+
+<div class="main">
+    <div class="login_img">
+        <img src="../images/general-nature/2s.jpg" alt="img">
+    </div>
+    <fieldset>
+        <div class="fields">
+            <div class="row">
+                <input id="username" class="username" value="18408240002" name="username" type="text" placeholder="用户名" maxlength="11" required aria-required="true"/>
+            </div>
+            <div class="row">
+                <input id="password" class="password" value="123456" name="password" type="password" placeholder="密码"  maxlength="20" required aria-required="true"/>
+            </div>
+            <div class="row">
+                <label class="label"><input type="button" class="btnLogin" value="登  录" onclick="teacherLogin()"></label>
+            </div>
+        </div>
+    </fieldset>
+    <div class="row row1">
+        <label class="about"><a href="javascript:void(0)">关于我们</a></label>
+        <label class="forget"><a href="javascript:void(0)">忘记密码？</a></label>
+    </div>
+</div>
+
+<script src="../scripts/jquery.min.js"></script>
+<script src="../scripts/constants.min.js"></script>
+<script src="../scripts/framework.launcher.js"></script>
+<script src="../scripts/teacher.js"></script>
+</body>
+</html>

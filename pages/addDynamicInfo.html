@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <base href="<%=basePath%>">
+    <meta charset=utf-8>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <title>编辑动态消息</title>
+
+    <link href="../styles/style.css"     		rel="stylesheet" >
+    <link href="../styles/framework.css" 		rel="stylesheet" >
+    <link href="../styles/owl.theme.css" 		rel="stylesheet" >
+    <style type="text/css">
+        body{ font-size:14px;}
+        .uploadField{
+            position:absolute;
+            top:0;
+            left: 0px;
+            width:100%;
+            height:100%;
+            filter:alpha(opacity:0);
+            opacity: 0;
+        }
+    </style>
+
+</head>
+<body>
+<div class="contain">
+    <div class="content dynamic">
+        <div class="dynamic-title">
+            <a href="javascript:void(0)" onclick="javascript:history.back(-1);" class="cancel">取消</a>
+            <button class="publish" onclick="addMessage()">发表</button>
+            <input type="hidden" id="studentId" value="${studentId }">
+            <input type="hidden" id="teacherId" value="${teacherId }">
+        </div>
+        <div class="decoration"></div>
+        <div class="dynamic-info">
+            <textarea placeholder="说点什么吧" maxlength="400" id="message"></textarea>
+        </div>
+        <div class="note">
+            <span class="limit">你还可以输入<strong>400</strong>字</span>
+        </div>
+        <form action="" method="post" id="uploader" enctype="multipart/form-data"><!--form表单 -->
+            <div class="dynamic-photo-list">
+                <ul class="photo-list-ul">
+                    <li class="photo-list-li" id="photo1">
+                        <div style="overflow: hidden;">
+                    <span id="preview1">
+                		<!-- <img src="../images/general-nature/1s.jpg" class="nav-photo"/>  -->
+                		<img alt="请上传图片" class="nav-photo"/>
+            		</span>
+                            <img src="../images/misc/close-button.png" class="nav-delete" onclick="deletePhoto(0)"/>
+                        </div>
+                    </li>
+
+                    <li class="photo-list-li" id="photo2">
+                        <div style="overflow: hidden;">
+                <span id="preview2">
+                    <!-- <img src="../images/general-nature/2s.jpg" class="nav-photo"/> -->
+                    <img alt="请上传图片" class="nav-photo"/>
+                </span>
+                            <img src="../images/misc/close-button.png" class="nav-delete" onclick="deletePhoto(1)"/>
+                        </div>
+                    </li>
+
+                    <li class="photo-list-li" id="photo3">
+                        <div style="overflow: hidden;">
+                <span id="preview3">
+                    <!-- <img src="../images/general-nature/3s.jpg" class="nav-photo"/> -->
+                    <img alt="请上传图片" class="nav-photo"/>
+                 </span>
+                            <img src="../images/misc/close-button.png" class="nav-delete" onclick="deletePhoto(2)"/>
+                        </div>
+                    </li>
+
+                    <li class="photo-list-li" id="photo4">
+                        <div style="overflow: hidden;">
+                <span id="preview4">
+                    <!-- <img src="../images/general-nature/4s.jpg" class="nav-photo" /> -->
+                    <img alt="请上传图片" class="nav-photo"/>
+                </span>
+                            <img src="../images/misc/close-button.png" class="nav-delete" onclick="deletePhoto(3)"/>
+                        </div>
+                    </li>
+
+                    <li class="photo-list-li" id="photo5">
+                        <div style="overflow: hidden;">
+                <span id="preview5">
+                    <!-- <img src="../images/general-nature/5s.jpg" class="nav-photo"/> -->
+                    <img alt="请上传图片" class="nav-photo"/>
+                </span>
+                            <img src="../images/misc/close-button.png" class="nav-delete" onclick="deletePhoto(4)"/>
+                        </div>
+                    </li>
+
+                    <li class="photo-list-li" id="photo6">
+                        <div style="overflow: hidden;">
+                <span id="preview6">
+                    <!-- <img src="../images/general-nature/6s.jpg" class="nav-photo"/> -->
+                    <img alt="请上传图片" class="nav-photo"/>
+                </span>
+                            <img src="../images/misc/close-button.png" class="nav-delete" onclick="deletePhoto(5)"/>
+                        </div>
+                    </li>
+
+                    <li class="photo-list-li" id="photo7">
+                        <div style="overflow: hidden;">
+                <span id="preview7">
+                    <!-- <img src="../images/general-nature/4s.jpg" class="nav-photo"/> -->
+                    <img alt="请上传图片" class="nav-photo"/>
+                </span>
+                            <img src="../images/misc/close-button.png" class="nav-delete" onclick="deletePhoto(6)"/>
+                        </div>
+                    </li>
+
+                    <li class="photo-list-li" id="photo8">
+                        <div style="overflow: hidden;">
+                 <span id="preview8">
+                    <!-- <img src="../images/general-nature/4s.jpg" class="nav-photo"/> -->
+                    <img alt="请上传图片" class="nav-photo"/>
+                 </span>
+                            <img src="../images/misc/close-button.png" class="nav-delete" onclick="deletePhoto(7)"/>
+                        </div>
+                    </li>
+
+                    <li class="photo-list-li" id="photo9">
+                        <div style="overflow: hidden;">
+                <span id="preview9">
+                    <!-- <img src="../images/general-nature/4s.jpg" class="nav-photo"/> -->
+                    <img alt="请上传图片" class="nav-photo"/>
+                </span>
+                            <img src="../images/misc/close-button.png" class="nav-delete" onclick="deletePhoto(8)"/>
+                        </div>
+                    </li>
+                    <li class="add-icon" id="add-icon01" onclick="addPhoto(1)">
+                        <div>
+                            <img src="../images/misc/nav_dropup.png" class="add-photo"/>
+                            <input id="uploadFieldTest" class="uploadField" onchange="fileChange(this,1)" type="file" name="file" accept="image/jpeg,image/x-png" />
+
+                            <!-- <input id=uploadFieldTest class="uploadField" onchange="filechooser(this)" type="file" name="file" accept="image/jpeg,image/x-png" /> -->
+                        </div>
+                    </li>
+
+                    <li class="add-icon" id="add-icon02" id="add02" style="display: none" onclick="addPhoto(2)">
+                        <div>
+                            <img src="../images/misc/nav_dropup.png" class="add-photo"/>
+                            <input class="uploadField" onchange="fileChange(this,2)" type="file" name="file" accept="image/jpeg,image/x-png" />
+                        </div>
+                    </li>
+                    <li class="add-icon" id="add-icon03"  style="display: none" onclick="addPhoto(3)">
+                        <div>
+                            <img src="../images/misc/nav_dropup.png" class="add-photo"/>
+                            <input class="uploadField" onchange="fileChange(this,3)" type="file" name="file" accept="image/jpeg,image/x-png" />
+                        </div>
+                    </li>
+                    <li class="add-icon" id="add-icon04"  style="display: none" onclick="addPhoto(4)">
+                        <div>
+                            <img src="../images/misc/nav_dropup.png" class="add-photo"/>
+                            <input class="uploadField" onchange="fileChange(this,4)" type="file" name="file" accept="image/jpeg,image/x-png" />
+                        </div>
+                    </li>
+                    <li class="add-icon" id="add-icon05"  style="display: none" onclick="addPhoto(5)">
+                        <div>
+                            <img src="../images/misc/nav_dropup.png" class="add-photo"/>
+                            <input class="uploadField" onchange="fileChange(this,5)" type="file" name="file" accept="image/jpeg,image/x-png" />
+                        </div>
+                    </li>
+                    <li class="add-icon" id="add-icon06" style="display: none" onclick="addPhoto(6)">
+                        <div>
+                            <img src="../images/misc/nav_dropup.png" class="add-photo"/>
+                            <input class="uploadField" onchange="fileChange(this,6)" type="file" name="file" accept="image/jpeg,image/x-png" />
+                        </div>
+                    </li>
+                    <li class="add-icon" id="add-icon07"  style="display: none" onclick="addPhoto(7)">
+                        <div>
+                            <img src="../images/misc/nav_dropup.png" class="add-photo"/>
+                            <input class="uploadField" onchange="fileChange(this,7)" type="file" name="file" accept="image/jpeg,image/x-png" />
+                        </div>
+                    </li>
+                    <li class="add-icon" id="add-icon08" style="display: none" onclick="addPhoto(8)">
+                        <div>
+                            <img src="../images/misc/nav_dropup.png" class="add-photo"/>
+                            <input class="uploadField" onchange="fileChange(this,8)" type="file" name="file" accept="image/jpeg,image/x-png" />
+                        </div>
+                    </li>
+                    <li class="add-icon" id="add-icon09"  style="display: none" onclick="addPhoto(9)">
+                        <div>
+                            <img src="../images/misc/nav_dropup.png" class="add-photo"/>
+                            <input class="uploadField" onchange="fileChange(this,9)" type="file" name="file" accept="image/jpeg,image/x-png" />
+                        </div>
+                    </li>
+                    <div style="clear:both;"></div>
+                </ul>
+            </div>
+            <input type="hidden" id="rst1" >
+            <input type="hidden" id="rst2" >
+            <input type="hidden" id="rst3" >
+            <input type="hidden" id="rst4" >
+            <input type="hidden" id="rst5" >
+            <input type="hidden" id="rst6" >
+            <input type="hidden" id="rst7" >
+            <input type="hidden" id="rst8" >
+            <input type="hidden" id="rst9" >
+        </form>
+    </div>
+</div>
+
+<script src="../scripts/jquery.min.js"></script>
+<script src="../scripts/lrz.bundle.js"></script>
+<script src="../scripts/owl.carousel.min.js"></script>
+<script src="../scripts/jquery.swipebox.js"></script>
+<script src="../scripts/colorbox.js"></script>
+<script src="../scripts/snap.js"></script>
+<script src="../scripts/contact.js"></script>
+<script src="../scripts/custom.js"></script>
+<script src="../scripts/framework.js"></script>
+<script src="../scripts/jquery.form.js"></script> <!--ajaxsubmit上传图片所需  -->
+<script src="../scripts/teacher.js"></script>
+<script src="../scripts/framework.launcher.js"></script>
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <base href="<%=basePath%>">
+    <meta charset=utf-8>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <title>动态空间</title>
+
+    <link href="../styles/style.css"     		rel="stylesheet" >
+    <link href="../styles/framework.css" 		rel="stylesheet" >
+</head>
+<body>
+
+<div id="preloader">
+    <div id="status">
+        <p class="center-text">
+            Loading the content...
+        </p>
+    </div>
+</div>
+
+<div class="top-deco"></div>
+<div class="contain">
+    <div class="content">
+        <div class="header">
+            <a href="javascript:void(0)" class="homepage-logo">
+                <img src="../images/misc/logo1.png" alt="img">
+            </a>
+            <a href="../index.html" class="go-home">首页</a>
+            <a href="javascript:void(0)" class="go-menu">管理</a>
+            <a href="javascript:void(0)" class="go-back">关闭</a>
+
+        </div>
+        <div class="decoration"></div>
+
+        <div class="navigation">
+            <div class="corner-deco"></div>
+            <div class="navigation-wrapper">
+                <div class="navigation-item">
+                    <a href="studentsManage.html" class="jieshao-icon">学生管理</a>
+                    <em class="inactive-menu"></em>
+                </div>
+                <div class="navigation-item">
+                    <a style="background-color: #e34e47;color:white;" href="javascript:void(0)" class="xinwen-icon">动态空间</a>
+                    <em class="inactive-menu"></em>
+                </div>
+                <div class="navigation-item">
+                    <a href="teacherDetail.html" class="lianxi-icon">教师中心</a>
+                    <em class="inactive-menu"></em>
+                </div>
+                <div class="navigation-item">
+                    <a href="serviceAbout.html" class="zuopin-icon">学校信息</a>
+                    <em class="inactive-menu"></em>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+
+        <div class="container"><input type="hidden" value="${student.studentId }" id="studentId">
+                <div class="one-record">
+                    <div class="record-head">
+                        <div class="head-portrait">
+                            <img src="../images/head-portrait/1.jpg"/>
+                        </div>
+                        <div class="stu-name">
+                            <a href="javascript:void(0)">王晓明</a>
+                            <span>2017-01-17 17:33:58&nbsp;&nbsp;by 张老师<a href="javascript:void(0)" onclick="" style="margin-left: 60px; color: gray;">删除</a></span>
+                        </div>
+                    </div>
+                    <div style="clear: both"></div>
+                    <div class="record-info">
+                <span>
+                    今日家庭作业：语文：抄写课后生字
+                </span>
+                        <div class="record-info-img">
+                            <div class="dynamic-photo-list">
+                                <ul class="photo-list-ul">
+
+                                    <li class="photo-list-li record-li">
+                                        <div style="overflow: hidden;"><img src="../images/general-nature/1s.jpg" class="nav-photo"/></div>
+                                    </li>
+                                    <li class="photo-list-li record-li">
+                                        <div style="overflow: hidden;"><img src="../images/general-nature/1s.jpg" class="nav-photo"/></div>
+                                    </li>
+                                    <li class="photo-list-li record-li">
+                                        <div style="overflow: hidden;"><img src="../images/general-nature/1s.jpg" class="nav-photo"/></div>
+                                    </li>
+                                    <div style="clear:both;"></div>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="decoration"></div>
+
+            <div class="one-record">
+                <div class="record-head">
+                    <div class="head-portrait">
+                        <img src="../images/head-portrait/1.jpg"/>
+                    </div>
+                    <div class="stu-name">
+                        <a href="javascript:void(0)">越越</a>
+                        <span>2017-01-17 17:33:58&nbsp;&nbsp;by 张老师<a href="javascript:void(0)" onclick="" style="margin-left: 60px; color: gray;">删除</a></span>
+                    </div>
+                </div>
+                <div style="clear: both"></div>
+                <div class="record-info">
+                <span>
+                    越越家长，请监督越越同学的家庭作业
+                </span>
+                    <div class="record-info-img">
+                        <div class="dynamic-photo-list">
+                            <ul class="photo-list-ul">
+
+                                <li class="photo-list-li record-li">
+                                    <div style="overflow: hidden;"><img src="../images/general-nature/3s.jpg" class="nav-photo"/></div>
+                                </li>
+                                <div style="clear:both;"></div>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="decoration"></div>
+
+            <div class="one-record">
+                <div class="record-head">
+                    <div class="head-portrait">
+                        <img src="../images/head-portrait/1.jpg"/>
+                    </div>
+                    <div class="stu-name">
+                        <a href="javascript:void(0)">张叶</a>
+                        <span>2017-01-17 17:33:58&nbsp;&nbsp;by 张老师<a href="javascript:void(0)" onclick="" style="margin-left: 60px; color: gray;">删除</a></span>
+                    </div>
+                </div>
+                <div style="clear: both"></div>
+                <div class="record-info">
+                <span>
+                    作业
+                </span>
+                    <div class="record-info-img">
+                        <div class="dynamic-photo-list">
+                            <ul class="photo-list-ul">
+
+                                <li class="photo-list-li record-li">
+                                    <div style="overflow: hidden;"><img src="../images/general-nature/4s.jpg" class="nav-photo"/></div>
+                                </li>
+                                <li class="photo-list-li record-li">
+                                    <div style="overflow: hidden;"><img src="../images/general-nature/4s.jpg" class="nav-photo"/></div>
+                                </li>
+                                <li class="photo-list-li record-li">
+                                    <div style="overflow: hidden;"><img src="../images/general-nature/4s.jpg" class="nav-photo"/></div>
+                                </li>
+                                <li class="photo-list-li record-li">
+                                    <div style="overflow: hidden;"><img src="../images/general-nature/5s.jpg" class="nav-photo"/></div>
+                                </li>
+                                <li class="photo-list-li record-li">
+                                    <div style="overflow: hidden;"><img src="../images/general-nature/5s.jpg" class="nav-photo"/></div>
+                                </li>
+                                <li class="photo-list-li record-li">
+                                    <div style="overflow: hidden;"><img src="../images/general-nature/5s.jpg" class="nav-photo"/></div>
+                                </li>
+                                <li class="photo-list-li record-li">
+                                    <div style="overflow: hidden;"><img src="../images/general-nature/6s.jpg" class="nav-photo"/></div>
+                                </li>
+                                <li class="photo-list-li record-li">
+                                    <div style="overflow: hidden;"><img src="../images/general-nature/6s.jpg" class="nav-photo"/></div>
+                                </li>
+                                <li class="photo-list-li record-li">
+                                    <div style="overflow: hidden;"><img src="../images/general-nature/6s.jpg" class="nav-photo"/></div>
+                                </li>
+                                <div style="clear:both;"></div>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="decoration"></div>
+        </div>
+
+        <div class="footer">
+            <div class="socials">
+                <a href="javascript:void(0)" class="weixin-icon"></a>
+                <a href="javascript:void(0)" class="dianhua-icon"></a>
+                <a href="javascript:void(0)" class="weibo-icon"></a>
+            </div>
+            <div class="clear"></div>
+            <p class="copyright" onclick="test()">
+                COPYRIGHT 家长通系统的设计与实现<br>
+                2016.ALL RIGHTS RESERVED
+            </p>
+        </div>
+
+    </div>
+</div>
+
+<div class="bottom-deco"></div>
+
+<script src="../scripts/jquery.min.js"></script>
+<script src="../scripts/custom.js"></script>
+<script src="../scripts/framework.js"></script>
+<script src="../scripts/framework.launcher.js"></script>
+<script src="../scripts/teacher.js"></script>
+</body>
+</html>
